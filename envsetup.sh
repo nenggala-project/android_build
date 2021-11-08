@@ -144,8 +144,8 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
-    if (echo -n $1 | grep -q -e "^lineage_") ; then
-        LINEAGE_BUILD=$(echo -n $1 | sed -e 's/^lineage_//g')
+    if (echo -n $1 | grep -q -e "^nenggala_") ; then
+        LINEAGE_BUILD=$(echo -n $1 | sed -e 's/^nenggala_//g')
     else
         LINEAGE_BUILD=
     fi
@@ -663,7 +663,7 @@ function lunch()
 
     if ! check_product $product
     then
-        # if we can't find a product, try to grab it off the LineageOS GitHub
+        # if we can't find a product, try to grab it off the Nenggala Project GitHub
         T=$(gettop)
         cd $T > /dev/null
         vendor/lineage/build/tools/roomservice.py $product
