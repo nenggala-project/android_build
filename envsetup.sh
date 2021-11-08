@@ -145,11 +145,11 @@ function check_product()
         return
     fi
     if (echo -n $1 | grep -q -e "^nenggala_") ; then
-        LINEAGE_BUILD=$(echo -n $1 | sed -e 's/^nenggala_//g')
+        NENGGALA_BUILD=$(echo -n $1 | sed -e 's/^nenggala_//g')
     else
-        LINEAGE_BUILD=
+        NENGGALA_BUILD=
     fi
-    export LINEAGE_BUILD
+    export NENGGALA_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
